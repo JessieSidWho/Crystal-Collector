@@ -39,7 +39,7 @@ $(document).ready(function(){
     let wins = 0;
     let losses = 0;
     let intervalId;
-    let number = 60;
+    let number = 61;
 
     // Function for setting a random target
     function setTarget() {
@@ -82,8 +82,12 @@ $(document).ready(function(){
       crystalFour.data("data-value", crystalRandom()); 
     //   console.log("Crystal 4: " + crystalFour.data("data-value"));
       setTarget();
-      run();
+
+      clearInterval(intervalId);
+      intervalId = setInterval(decrement, 1000);
+      
       total = 0;
+      number = 61;
     //   console.log("Target: " + target);
       $("#total").html("Total: " + total);
       $("#wins").html("Wins: " + wins);
@@ -106,18 +110,18 @@ $(document).ready(function(){
     }
 
     // timer
-    function run() {
-        clearInterval(intervalId);
-        intervalId = setInterval(decrement, 1000);
-    }
 
     function decrement() {
-
         number--;
   
-        $("#timer").html("00:" + number);
+        if (number > 9) {
+          $("#timer").html("00:" + number);
+        } else if (number < 10) {
+          $("#timer").html("00:0" + number);  
+        }
   
         if (number === 0) {
+            losses++;
           initializeReset();
         }
       }
