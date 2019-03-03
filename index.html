@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./assets/game.js"></script>
     <title>Crystal Collector</title>
@@ -14,15 +15,15 @@
 
 
         <!-- Row containing name of game -->
-    <div class="row bg-info">
+    <div class="row bg-info ">
         <div id="gameName" class="jumbotron col-md-12 bg-info pb-0">
-          <h1 class="text-center">Crystal Collector</h1>
+          <h1 class="text-center font-weight-bold font-italic">Crystal Collector</h1>
         </div>
     </div>
 
     <!-- Row containing Instructions -->
     <div class="row bg-info">
-        <div id="gameDescription" class="col-md-6 offset-3 pb-3">
+        <div id="gameDescription" class="col-md-7 offset-1 pb-3">
           <p>You will be given a random number at the start of the game.</p>
           
           <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
@@ -32,24 +33,27 @@
           <p>The value of each crystal is hidden from you until you click on it.</p>
           
           <p>Each time when the game starts, the game will change the values of each crystal.</p>
+
+          <p>AND .. You have 60 seconds to finish or else you lose the round!</p>
         </div>
 
         <div class="col-md-3 ">
 
-            <div class="row">
+            <div class="row mb-4 mt-4">
               <div class="col-md-8 offset-2 border">
-                <div id="wins" class=" p-4">
+                <div id="wins" class=" p-3 ">
       
                 </div>
-                <div id="losses" class=" p-4 pt-2">
+                <div id="losses" class=" p-3 ">
       
                 </div> 
               </div>
             </div>
 
+            <!-- Row containg the rimer -->
             <div class="row">
-              <div class="col-md-8 offset-2 mt-2 p-4 border">
-                <div id="timer" class=" text-center border pl-6 pr-6 pt-2 pb-2">
+              <div class="col-md-8 offset-2 mt-2 p-4 border bg-light">
+                <div id="timer" class=" text-center border pl-6 pr-6 pt-2 pb-2 bg-info">
                   00:00
                 </div>
               </div>
@@ -71,33 +75,29 @@
 
     <!-- Row containing Color Buttons -->
     <div class="row mb-6 bg-info">
-                <div id="color" class="col-md-3 bg-danger">
-                    <button id="color" class="btn btn-block bg-danger" data-id=1 data-value=0>
-                      Red
+                <div id="color" class="col-md-2 offset-1">
+                    <button id="color" class="btn btn-block bg-light" data-id=1 data-value=0>
+                        <i class="fas fa-gem text-danger" style="font-size: 50px;"></i>
                     </button>       
                 </div>
-                <div id="color" class="col-md-3 bg-primary">
-                    <button id="color" class="btn btn-block bg-primary" data-id=2 data-value=0>
-                      Blue
+                <div id="color" class="col-md-2  ">
+                    <button id="color" class="btn btn-block bg-light" data-id=2 data-value=0>
+                        <i class="fas fa-gem text-primary" style="font-size: 50px;"></i>
                     </button>  
                 </div>
-                <div id="color" class="col-md-3 bg-success">
-                    <button id="color" class="btn btn-block bg-success" data-id=3 data-value=0>
-                      Green
+                <div id="color" class="col-md-2  ">
+                    <button id="color" class="btn btn-block bg-light" data-id=3 data-value=0>
+                        <i class="fas fa-gem text-success" style="font-size: 50px;"></i>
                     </button>  
                 </div>
-                <div id="color" class="col-md-3 bg-warning">
-                    <button id="color" class="btn btn-block bg-warning" data-id=4 data-value=0>
-                      Yellow
+                <div id="color" class="col-md-2  ">
+                    <button id="color" class="btn btn-block bg-light" data-id=4 data-value=0>
+                        <i class="fas fa-gem text-warning" style="font-size: 50px;"></i>
                     </button>  
                 </div>
     </div>
 
-    <!-- Row containg Wins and Losses -->
-    <div class="row bg-info"> 
-            
-           
-    </div>
+
 
 
 
